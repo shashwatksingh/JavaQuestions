@@ -23,7 +23,7 @@ public class ArrayReverse {
         for( int i=0 ; i<N ; i++)
             arr[i] = s.nextInt();
         for(int item: obj.reverse(arr, N))
-            System.out.println(item);
+            System.out.print(item);
     }
     
     public int[] reverse(int[] arr,int N){
