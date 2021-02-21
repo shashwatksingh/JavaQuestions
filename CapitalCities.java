@@ -77,9 +77,10 @@ public class CapitalCities {
         
         //compute and computeIfAbsent and ComputeIfPresent functions
         
-        capitalCities.compute("Myanmar", (String key,String value) -> { 
-            key.toLowerCase(); return (null);
+        capitalCities.compute("India", ( key, value ) -> {   
+            return key.toLowerCase();
         });
+        capitalCities.computeIfAbsent("Myanmar", (key) -> "Bangkok");
         System.out.println(capitalCities);
     }
     
