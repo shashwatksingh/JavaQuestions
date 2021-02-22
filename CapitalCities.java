@@ -75,14 +75,15 @@ public class CapitalCities {
         });
         System.out.println(capitalCities);
         
-        //compute and computeIfAbsent and ComputeIfPresent functions
+        //compute and computeIfAbsent and ComputeIfPresent functions. Return type is must in these functions.
         
-        capitalCities.compute("India", ( key, value ) -> {   
+        capitalCities.compute("India", ( key, value ) -> { 
+            //return null if the key doesn't have any value
             return key.toLowerCase();
         });
         capitalCities.computeIfAbsent("Myanmar", (key) -> "Bangkok");
         System.out.println(capitalCities);
     }
-    
-   
-}
+        
+        
+    }
