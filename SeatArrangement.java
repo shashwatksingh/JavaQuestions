@@ -34,8 +34,8 @@ public class SeatArrangement {
                 seat = "MS";
             else if(temp == 3 || temp == 4 || temp == 9 || temp==10)
                 seat = "AS";            
-            System.out.print(temp+12*ctr);
-            System.out.print(" "+seat);
+            
+            System.out.print(temp+12*ctr+" "+seat);
             System.out.println();
         }            
     }
