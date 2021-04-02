@@ -46,7 +46,7 @@ public class CapitalCities {
         //replaceAll wants a Bi-function as a input
         capitalCities.replaceAll((key, value) -> value.toUpperCase());
         System.out.println(capitalCities);
-        
+         
         //cloning the hashmap
         HashMap <String, String> cloneHashMap = new HashMap<>();
         cloneHashMap = (HashMap<String, String>) capitalCities.clone();
@@ -83,7 +83,5 @@ public class CapitalCities {
         });
         capitalCities.computeIfAbsent("Myanmar", (key) -> "Bangkok");
         System.out.println(capitalCities);
-    }
-        
-        
+    } 
     }

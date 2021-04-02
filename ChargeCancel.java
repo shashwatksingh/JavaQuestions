@@ -18,14 +18,14 @@ public class ChargeCancel {
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
         String str = scan.next();
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         for(int i=0;i<str.length();i++) {
 
             if(!stack.isEmpty() && stack.peek() == str.charAt(i))
                 stack.pop();
             else
                 stack.push(str.charAt(i));
-        }
+        } 
         System.out.println(stack.size());
         stack.forEach((ch) -> {
             System.out.print(ch);

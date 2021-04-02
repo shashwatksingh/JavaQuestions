@@ -10,34 +10,34 @@ package com.mycompany.javaquestions;
  * @author HP
  */
 import java.util.*;
+
 public class TrainCoaches {
+
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
 
-        int t =scr.nextInt();
-        while(t > 0){
-            String n = scr.next();
-            int[] temp = new int[4];
-            int ctr = 0;
-            for(int i=0; i<4; i++){
-                temp[i] = (int)n.charAt(i);
+        int t = scr.nextInt();
+        scr.nextLine();
+        while (t-- > 0) {
+            String s = scr.next();
+            int n = s.length();
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = (int) (s.charAt(i) - '0');
             }
-            
-            Arrays.sort(temp);
-            for(var item: temp)
-                System.out.print(item+", ");
-            System.out.println("");
-            for(int i=1; i<4; i++){
-                if(temp[i-1] == temp[i]-1 || temp[i-1]==temp[i] ){
-                    ctr++;
+            boolean b = true;
+            Arrays.sort(a);
+            for (int i = 0; i < n - 1; i++) {
+                if (a[i] != a[i + 1] - 1) {
+                    b = false;
+                    break;
                 }
-                System.out.println(ctr);        
             }
-            if(ctr==3)
+            if (b) {
                 System.out.println("YES");
-            else
+            } else {
                 System.out.println("NO");
-            t--;
-        }  
-    }     
+            }
+        }
+    }
 }
