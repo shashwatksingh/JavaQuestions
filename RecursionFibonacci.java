@@ -11,6 +11,7 @@ package com.mycompany.javaquestions;
  */
 public class RecursionFibonacci {
 
+    //Function to calculate the fibonacci term of the nth index
     int fibonacci(int n) {
         if (n == 1 || n == 2) {
             return 1;
@@ -20,8 +21,9 @@ public class RecursionFibonacci {
 
     public static void main(String[] args) {
         RecursionFibonacci obj = new RecursionFibonacci();
+        //Looping though the number of elements required
         for (int i = 1; i <= 6; i++) {
-            System.out.print(obj.fibonacci(i) + " , ");
+            System.out.print(obj.fibonacci(i) + "  ");
         }
     }
 }
