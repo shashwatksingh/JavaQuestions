@@ -10,33 +10,36 @@ package com.mycompany.javaquestions;
  * @author HP
  */
 public class AllStringPermutation {
+
     static int count;
+
     void permutation(String str, int i, int n) {
-            int j=0;
-        if(i==n){
+        int j = 0;
+        if (i == n) {
             count++;
-            System.out.println("Count is: "+count+" String is: "+ str);
-        } else{
-            for( j=i; j<=n;j++){
+            System.out.println("Count is: " + count + " String is: " + str);
+        } else {
+            for (j = i; j <= n; j++) {
                 str = swap(str, i, j);
-                permutation(str, i+1, n);
-                str = swap(str,i,j); //Backtracking
+                permutation(str, i + 1, n);
+                str = swap(str, i, j); //Backtracking
             }
-        }               
+        }
     }
-    String swap(String str, int i, int j){
-        String res = new String();
+
+    String swap(String str, int i, int j) {
+        String res = "";
         char pos_i = str.charAt(i);
         char pos_j = str.charAt(j);
-        res = str.substring(0,i)+pos_j+str.substring(i+1, j)+pos_i+str.substring(j+1);
-        System.out.println(res);
-        
+        if(i!=j) res = str.substring(0, i) + pos_j + str.substring(i + 1, j) + pos_i + str.substring(j + 1);
+        else res=str;
         return res;
     }
+
     public static void main(String[] args) {
         AllStringPermutation obj = new AllStringPermutation();
-        String str = "geek";
-        obj.swap(str, 0, 3);
+        String str = "ABC";
+        obj.permutation(str, 0, str.length() - 1);
     }
-    
+
 }
