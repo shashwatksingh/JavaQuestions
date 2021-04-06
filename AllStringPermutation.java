@@ -20,9 +20,9 @@ public class AllStringPermutation {
             System.out.println("Count is: " + count + " String is: " + str);
         } else {
             for (j = i; j <= n; j++) {
-                str = swap(str, i, j);
+                str = swap2(str, i, j);
                 permutation(str, i + 1, n);
-                str = swap(str, i, j); //Backtracking
+                str = swap2(str, i, j); //Backtracking
             }
         }
     }
@@ -31,9 +31,21 @@ public class AllStringPermutation {
         String res = "";
         char pos_i = str.charAt(i);
         char pos_j = str.charAt(j);
-        if(i!=j) res = str.substring(0, i) + pos_j + str.substring(i + 1, j) + pos_i + str.substring(j + 1);
-        else res=str;
+        if (i != j) {
+            res = str.substring(0, i) + pos_j + str.substring(i + 1, j) + pos_i + str.substring(j + 1);
+        } else {
+            res = str;
+        }
         return res;
+    }
+
+    //Alternate swapping method
+    String swap2(String str, int i, int j) {
+        char ch[] = str.toCharArray();
+        char temp = ch[i];
+        ch[i] = ch[j];
+        ch[j] = temp;
+        return String.valueOf(ch);
     }
 
     public static void main(String[] args) {
