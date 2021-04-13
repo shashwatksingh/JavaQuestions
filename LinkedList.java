@@ -72,13 +72,43 @@ public class LinkedList {
         return list;
     }
 
+    LinkedList deleteByPosition(LinkedList list, int index) {
+        Node currNode = list.head, prev = null;
+        if (index == 0 && currNode != null) {
+            list.head = currNode.next;
+            System.out.println(index + " position element deleted");
+            return list;
+        }
+        int counter = 0;
+        while (currNode != null) {
+            if (counter == index) {
+                prev.next = currNode.next;
+                System.out.println(index + " position element deleted");
+                break;
+            } else{
+                prev = currNode;
+                currNode = currNode.next;
+                counter++;
+            }
+        }
+        if (currNode == null) {
+            System.out.println(index + " position element not found");
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list = list.insertLinkedList(list, 2);
         list = list.insertLinkedList(list, 5);
         list = list.insertLinkedList(list, 6);
+        list = list.insertLinkedList(list, 8);
+        list = list.insertLinkedList(list, 12);
+        list = list.insertLinkedList(list, 15);
         list.printLinkedList(list);
-        list.deleteByKey(list, 5);
+        list = list.deleteByKey(list, 5);
+        list.printLinkedList(list);
+        list = list.deleteByPosition(list, 3);
         list.printLinkedList(list);
     }
 }
