@@ -10,6 +10,7 @@ package com.mycompany.javaquestions;
  * @author HP
  */
 public class LinkedList {
+
     //Starting of the linked list
     static Node head;
 
@@ -17,7 +18,7 @@ public class LinkedList {
 
         int data;
         Node next;
-        
+
         //Constructor to initialize the state variables
         public Node(int data) {
             next = null;
@@ -71,21 +72,25 @@ public class LinkedList {
         if (currNode != null) {
             prev.next = currNode.next;
             System.out.println(key + " found and deleted");
-        } else if(currNode == null) {
+        } else if (currNode == null) {
             System.out.println(key + " not found");
         }
         return list;
     }
 
+    //Deleting the element at a particular position
     LinkedList deleteByPosition(LinkedList list, int index) {
         Node currNode = list.head, prev = null;
+        // Checking if the element is at the 0 index or not
         if (index == 0 && currNode != null) {
             list.head = currNode.next;
             System.out.println(index + " position element deleted");
             return list;
         }
+        //Traversing the limke list while holding the index value in the counter
         int counter = 0;
         while (currNode != null) {
+            // Checking if the counter is equal to the index else the currNode will be null
             if (counter == index) {
                 prev.next = currNode.next;
                 System.out.println(index + " position element deleted");
