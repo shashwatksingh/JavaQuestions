@@ -10,14 +10,15 @@ package com.mycompany.javaquestions;
  * @author HP
  */
 public class LinkedList {
-
+    //Starting of the linked list
     static Node head;
 
     public class Node { //Starting an inner class
 
         int data;
         Node next;
-
+        
+        //Constructor to initialize the state variables
         public Node(int data) {
             next = null;
             this.data = data;
@@ -26,8 +27,10 @@ public class LinkedList {
 
     //Method to inser a new node
     LinkedList insertLinkedList(LinkedList list, int data) {
+        //Creating a new node
         Node new_node = new Node(data);
         new_node.next = null;
+        //Check if the node just created is empty or not
         if (list.head == null) {
             list.head = new_node;
         } else {
@@ -53,20 +56,22 @@ public class LinkedList {
     //Deletion by key
     LinkedList deleteByKey(LinkedList list, int key) {
         Node currNode = list.head, prev = null;
+        //If the key to be deleted is at the first index of the linked list
         if (currNode != null && currNode.data == key) {
             list.head = currNode.next;
             System.out.println(key + "found and deleted");
             return list;
         }
+        //Iterating through the linked list
         while (currNode != null && currNode.data != key) {
             prev = currNode;
             currNode = currNode.next;
         }
+        // After the while loop, the currNode will contain either null if the list is empty or the key is not found. Therefore, we have checked if currNode is null or not
         if (currNode != null) {
             prev.next = currNode.next;
             System.out.println(key + " found and deleted");
-        }
-        if (currNode == null) {
+        } else if(currNode == null) {
             System.out.println(key + " not found");
         }
         return list;
@@ -85,7 +90,7 @@ public class LinkedList {
                 prev.next = currNode.next;
                 System.out.println(index + " position element deleted");
                 break;
-            } else{
+            } else {
                 prev = currNode;
                 currNode = currNode.next;
                 counter++;
