@@ -9,7 +9,7 @@ package com.mycompany.javaquestions;
  *
  * @author HP
  */
-public class LinkedList {
+public class ClassLinkedList {
 
     //Starting of the linked list
     static Node head;
@@ -27,7 +27,7 @@ public class LinkedList {
     }
 
     //Method to inser a new node
-    LinkedList insertLinkedList(LinkedList list, int data) {
+    ClassLinkedList insertLinkedList(ClassLinkedList list, int data) {
         //Creating a new node
         Node new_node = new Node(data);
         new_node.next = null;
@@ -45,7 +45,7 @@ public class LinkedList {
     }
 
     //Method to traverse the linked list and printing every element
-    void printLinkedList(LinkedList list) {
+    void printLinkedList(ClassLinkedList list) {
         Node currNode = list.head;
         System.out.println("Linked List:");
         while (currNode != null) {
@@ -55,7 +55,7 @@ public class LinkedList {
     }
 
     //Deletion by key
-    LinkedList deleteByKey(LinkedList list, int key) {
+    ClassLinkedList deleteByKey(ClassLinkedList list, int key) {
         Node currNode = list.head, prev = null;
         //If the key to be deleted is at the first index of the linked list
         if (currNode != null && currNode.data == key) {
@@ -79,7 +79,7 @@ public class LinkedList {
     }
 
     //Deleting the element at a particular position
-    LinkedList deleteByPosition(LinkedList list, int index) {
+    ClassLinkedList deleteByPosition(ClassLinkedList list, int index) {
         Node currNode = list.head, prev = null;
         // Checking if the element is at the 0 index or not
         if (index == 0 && currNode != null) {
@@ -108,7 +108,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        ClassLinkedList list = new ClassLinkedList();
         list = list.insertLinkedList(list, 2);
         list = list.insertLinkedList(list, 5);
         list = list.insertLinkedList(list, 6);
