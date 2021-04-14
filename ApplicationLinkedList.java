@@ -27,7 +27,11 @@ public class ApplicationLinkedList {
         
         // Getting a value for the particaular index
         String str = animals.get(3);
-        System.out.println("Linked List animals: " + animals);
         System.out.println("String at position 3 " + str);
+        
+        //Change the element at the particaular position
+        animals.set(3, "Snake");
+        System.out.println("Linked List animals: " + animals);
+        
     }
 }
