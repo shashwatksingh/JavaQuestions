@@ -32,9 +32,19 @@ public class ApplicationLinkedList {
 
         //Change the element at the particaular position
         animals.set(3, "Snake");
-        //Remove an element from a particular index
+
+        //Remove an element from the head of the list
         System.out.println(animals.remove());
-                
+
+        //Remove an element from the list at a particular index
+        System.out.println(animals.remove(2));
+
+        //remove an object
+        System.out.println(animals.remove("Goat"));
+
+        //Removing all the elements
+        animals.removeAll(animals);
+
         //Iterating throught the linked list using for each loop
         for (String animal : animals) {
             System.out.print(animal);
