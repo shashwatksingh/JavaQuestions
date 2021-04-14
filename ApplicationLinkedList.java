@@ -42,7 +42,7 @@ public class ApplicationLinkedList {
         //remove an object
         System.out.println(animals.remove("Goat"));
 
-        //Removing all the elements
+        //Removing all the elements //same work is done by animals.clear();
         animals.removeAll(animals);
 
         //Iterating throught the linked list using for each loop
@@ -50,7 +50,12 @@ public class ApplicationLinkedList {
             System.out.print(animal);
             System.out.print(", ");
         }
-
+        
+        //To check if an object or a string is present in the linked list
+        System.out.println(animals.contains("Owl"));
+        
+        // Methods to be tried in the next session
+        //indexOf(), lastIndexOf(), iterator() -> Returns an iterator to iterate throught the elements
         System.out.println("Linked List animals: " + animals);
 
     }
