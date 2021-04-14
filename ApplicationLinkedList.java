@@ -20,6 +20,14 @@ public class ApplicationLinkedList {
         animals.add("Cat");
         animals.add("Tiger");
         animals.add("Giraffe");
+        animals.add("Lion");
+        animals.add("Rat");
+        animals.add("Goat");
+        animals.add("Monkey");
+        
+        // Getting a value for the particaular index
+        String str = animals.get(3);
         System.out.println("Linked List animals: " + animals);
+        System.out.println("String at position 3 " + str);
     }
 }
