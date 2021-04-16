@@ -43,7 +43,7 @@ public class ApplicationLinkedList {
         System.out.println(animals.remove("Goat"));
 
         //Removing all the elements //same work is done by animals.clear();
-        animals.removeAll(animals);
+        //animals.removeAll(animals);
 
         //Iterating throught the linked list using for each loop
         for (String animal : animals) {
@@ -56,6 +56,14 @@ public class ApplicationLinkedList {
         
         // Methods to be tried in the next session
         //indexOf(), lastIndexOf(), iterator() -> Returns an iterator to iterate throught the elements
+        //indexOf(Object) returns the index of the object. If not found, it returns -1. 
+        System.out.println("index of Lion " + animals.indexOf("Dog"));
+        
+        //iterator
+        Iterator<String> x = animals.iterator();
+        while(x.hasNext())
+            System.out.println(x.next());
+                
         System.out.println("Linked List animals: " + animals);
 
     }
