@@ -42,9 +42,14 @@ public class DoubleLinkedListPractice {
         head = new_node;
         return list;
     }
+
     DoubleLinkedListPractice insertAtLast(DoubleLinkedListPractice list, int data) {
         Node new_node = new Node(data);
         Node curr = head;
+        if (head == null) {
+            head = new_node;
+            return list;
+        }
         while (curr.next != null) {
             curr = curr.next;
         }
@@ -63,14 +68,14 @@ public class DoubleLinkedListPractice {
 
     public static void main(String[] args) {
         DoubleLinkedListPractice list = new DoubleLinkedListPractice();
-        list = list.insertAtStart(list, 5);
+        /*list = list.insertAtStart(list, 5);
         list.insertAtStart(list, 6);
         list.insertAtStart(list, 10);
         list.insertAtStart(list, 15);
         list.insertAtStart(list, 12);
         list.insertAtStart(list, 3);
         System.out.println("list print");
-        list.printDoubleLinkedList(list);
+        list.printDoubleLinkedList(list);*/
         list.insertAtLast(list, 2);
         System.out.println("list printfor insertion at last");
         list.printDoubleLinkedList(list);
