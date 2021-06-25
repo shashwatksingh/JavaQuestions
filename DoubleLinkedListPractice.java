@@ -66,12 +66,12 @@ public class DoubleLinkedListPractice {
             head = new_node;
             return list;
         }
-        while (curr != null && ctr != pos) {
-            System.out.println("ctr " + ctr + "pos" + pos);
+        while (curr.next != null && ctr != pos) {
             curr = curr.next;
             ctr++;
         }
-        if (curr.next != null) {
+        System.out.println("curr" + curr.data);
+        if (curr != null && curr.next != null) {
             new_node.next = curr.next;
             curr.next.prev = new_node;
             new_node.prev = curr;
@@ -105,7 +105,7 @@ public class DoubleLinkedListPractice {
         System.out.println("list printfor insertion at last");
         list.printDoubleLinkedList(list);
         System.out.println("After position insertion");
-        list = list.insertAfter(list, 0, 27);
+        list = list.insertAfter(list, 15, 27);
         list.printDoubleLinkedList(list);
     }
 }
