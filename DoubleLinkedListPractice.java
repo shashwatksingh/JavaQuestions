@@ -58,6 +58,31 @@ public class DoubleLinkedListPractice {
         return list;
     }
 
+    DoubleLinkedListPractice insertAfter(DoubleLinkedListPractice list, int pos, int data) {
+        Node new_node = new Node(data);
+        int ctr = 0;
+        Node curr = head;
+        if (head == null) {
+            head = new_node;
+            return list;
+        }
+        while (curr != null && ctr != pos) {
+            System.out.println("ctr " + ctr + "pos" + pos);
+            curr = curr.next;
+            ctr++;
+        }
+        if (curr.next != null) {
+            new_node.next = curr.next;
+            curr.next.prev = new_node;
+            new_node.prev = curr;
+            curr.next = new_node;
+            System.out.println("Added " + data);
+        } else {
+            System.out.println("The position does not exist");
+        }
+        return list;
+    }
+
     void printDoubleLinkedList(DoubleLinkedListPractice list) {
         Node curr = head;
         while (curr != null) {
@@ -68,16 +93,19 @@ public class DoubleLinkedListPractice {
 
     public static void main(String[] args) {
         DoubleLinkedListPractice list = new DoubleLinkedListPractice();
-        /*list = list.insertAtStart(list, 5);
+        list = list.insertAtStart(list, 5);
         list.insertAtStart(list, 6);
         list.insertAtStart(list, 10);
         list.insertAtStart(list, 15);
         list.insertAtStart(list, 12);
         list.insertAtStart(list, 3);
         System.out.println("list print");
-        list.printDoubleLinkedList(list);*/
+        list.printDoubleLinkedList(list);
         list.insertAtLast(list, 2);
         System.out.println("list printfor insertion at last");
+        list.printDoubleLinkedList(list);
+        System.out.println("After position insertion");
+        list = list.insertAfter(list, 0, 27);
         list.printDoubleLinkedList(list);
     }
 }

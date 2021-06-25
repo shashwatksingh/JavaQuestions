@@ -118,6 +118,17 @@ public class ClassLinkedList {
         head = temp1;
         return list;
     }
+    ClassLinkedList reverseRecursiveLinkedList(ClassLinkedList list) {
+        Node temp1 = null, temp2 = null;
+        while(head!=null){
+            temp2 = head.next;
+            head.next = temp1;
+            temp1 = head;
+            head = temp2;
+        }
+        head = temp1;
+        return list;
+    }
 
     public static void main(String[] args) {
         ClassLinkedList list = new ClassLinkedList();
