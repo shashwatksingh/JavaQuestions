@@ -115,6 +115,31 @@ public class DoubleLinkedListPractice {
         }
     }
 
+    void deleteData(int data) {
+        Node curr = head;
+        if (head == null) {
+            System.out.println("Nothing to delete. The list is empty");
+            return;
+        }
+        while (curr.next != null && curr.data != data) {
+            curr = curr.next;
+        }
+        if (curr.data == data) {
+            if (curr.prev == null) {
+                head = curr.next;
+                curr.next.prev = null;
+            } else if (curr.next == null) {
+                curr.prev.next = null;
+                curr.prev = null;
+            } else {
+                curr.prev.next = curr.next;
+                curr.next.prev = curr.prev;
+            }
+        } else {
+            System.out.println("Data not found");
+        }
+    }
+
     void printDoubleLinkedList(DoubleLinkedListPractice list) {
         Node curr = head;
         if (head == null) {
@@ -145,23 +170,27 @@ public class DoubleLinkedListPractice {
     public static void main(String[] args) {
         DoubleLinkedListPractice list = new DoubleLinkedListPractice();
         list = list.insertAtStart(list, 5);
+        list.insertAtStart(list, 6);
+        list.insertAtStart(list, 10);
+        list.insertAtStart(list, 15);
+        list.insertAtStart(list, 12);
+        list.insertAtStart(list, 3);
+        System.out.println("list print");
         list.printDoubleLinkedList(list);
-//        list.insertAtStart(list, 6);
-//        list.insertAtStart(list, 10);
-//        list.insertAtStart(list, 15);
-//        list.insertAtStart(list, 12);
-//        list.insertAtStart(list, 3);
-//        System.out.println("list print");
-//        list.printDoubleLinkedList(list);
-//        list.insertAtLast(list, 2);
-//        System.out.println("list printfor insertion at last");
-//        list.printDoubleLinkedList(list);
-//        System.out.println("After position insertion");
-//        list.insertAfter(list, 3, 27);
-//        list.printDoubleLinkedList(list);
-//        System.out.println("position " + list.search(list, 27));
-//        list.deleteFirst(list);
+        list.insertAtLast(list, 2);
+        System.out.println("list printfor insertion at last");
+        list.printDoubleLinkedList(list);
+        System.out.println("After position insertion");
+        list.insertAfter(list, 3, 27);
+        list.printDoubleLinkedList(list);
+        System.out.println("position " + list.search(list, 27));
+        list.deleteFirst(list);
         list.deleteLast();
+        list.printDoubleLinkedList(list);
+        System.out.println("Deleting from the single function");
+        list.deleteData(5);
+        list.deleteData(12);
+        list.deleteData(27);
         list.printDoubleLinkedList(list);
     }
 }
