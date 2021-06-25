@@ -70,9 +70,11 @@ public class DoubleLinkedListPractice {
             curr = curr.next;
             ctr++;
         }
+        //Checking if the length of the linked list is less than the pos
         if (ctr < pos) {
             System.out.println("The position does not exist");
         } else {
+            //Checking if the position is of the last element in the linked list
             if (curr.next != null) {
                 new_node.next = curr.next;
                 curr.next.prev = new_node;
@@ -95,6 +97,21 @@ public class DoubleLinkedListPractice {
         }
     }
 
+    Node search(DoubleLinkedListPractice list, int data) {
+        Node curr = list.head;
+        if (head == null) {
+            return null;
+        } else {
+            while (curr.next != null) {
+                if (curr.data == data) {
+                    return curr;
+                }
+                curr = curr.next;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         DoubleLinkedListPractice list = new DoubleLinkedListPractice();
         list = list.insertAtStart(list, 5);
@@ -109,7 +126,8 @@ public class DoubleLinkedListPractice {
         System.out.println("list printfor insertion at last");
         list.printDoubleLinkedList(list);
         System.out.println("After position insertion");
-        list = list.insertAfter(list, 7, 27);
+        list = list.insertAfter(list, 3, 27);
         list.printDoubleLinkedList(list);
+        System.out.println("position " + list.search(list, 27));
     }
 }
