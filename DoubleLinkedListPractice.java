@@ -88,6 +88,16 @@ public class DoubleLinkedListPractice {
 
         return list;
     }
+    
+    void deleteFirst(DoubleLinkedListPractice list) {
+        if(head == null){
+            System.out.println("Nothing to delete. The list is empty");
+        } else {
+            head = head.next;
+            System.out.println("Deleted "+ head.prev.data);
+            head.prev = null;
+        }
+    }
 
     void printDoubleLinkedList(DoubleLinkedListPractice list) {
         Node curr = head;
@@ -126,8 +136,10 @@ public class DoubleLinkedListPractice {
         System.out.println("list printfor insertion at last");
         list.printDoubleLinkedList(list);
         System.out.println("After position insertion");
-        list = list.insertAfter(list, 3, 27);
+        list.insertAfter(list, 3, 27);
         list.printDoubleLinkedList(list);
         System.out.println("position " + list.search(list, 27));
+        list.deleteFirst(list);
+        list.printDoubleLinkedList(list);
     }
 }
