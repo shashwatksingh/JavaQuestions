@@ -127,56 +127,56 @@ public class CircularLinkedListPractice {
     //main function
     public static void main(String[] args) {
         CircularLinkedListPractice list = new CircularLinkedListPractice();
-        while (true) {
-            System.out.println("1. Create List");
-            System.out.println("2. Display List");
-            System.out.println("3. Add to Empty List");
-            System.out.println("4. Add to Beginning of List");
-            System.out.println("5. Add to End of List");
-            System.out.println("6. Add after item in List");
-            System.out.println("7. Delete");
-            System.out.println("8. Exit");
-            System.out.println("Enter Choice");
-            Scanner scr = new Scanner(System.in);
-            int choice = scr.nextInt();
-            switch (choice) {
-                case 1:
-                    list.createList();
-                    break;
-                case 2:
-                    list.display(list);
-                    break;
-                case 3:
-                    System.out.println("Enter number");
-                    list.addToEmpty(scr.nextInt());
-                    break;
-                case 4:
-                    System.out.println("Enter number");
-                    list.addAtbeginning(scr.nextInt());
-                    break;
-                case 5:
-                    System.out.println("Enter number");
-                    list.addToEnd(scr.nextInt());
-                    break;
-                case 6:
-                    System.out.println("Enter number");
-                    int value = scr.nextInt();
-                    System.out.println("Enter the item after which you want to enter the value");
-                    int item = scr.nextInt();
-                    list.addAfter(value, item);
-                    break;
-                case 7:
-                    System.out.println("Enter number");
-                    int val = scr.nextInt();
-                    list.del(val);
-                    break;
-                case 8:
-                    return;
-                default:
-                    list.display(list);
-            }
-            
-        }
+//        while (true) {
+//            System.out.println("1. Create List");
+//            System.out.println("2. Display List");
+//            System.out.println("3. Add to Empty List");
+//            System.out.println("4. Add to Beginning of List");
+//            System.out.println("5. Add to End of List");
+//            System.out.println("6. Add after item in List");
+//            System.out.println("7. Delete");
+//            System.out.println("8. Exit");
+//            System.out.println("Enter Choice");
+//            Scanner scr = new Scanner(System.in);
+//            int choice = scr.nextInt();
+//            switch (choice) {
+//                case 1:
+//                    list.createList();
+//                    break;
+//                case 2:
+//                    list.display(list);
+//                    break;
+//                case 3:
+//                    System.out.println("Enter number");
+//                    list.addToEmpty(scr.nextInt());
+//                    break;
+//                case 4:
+//                    System.out.println("Enter number");
+//                    list.addAtbeginning(scr.nextInt());
+//                    break;
+//                case 5:
+//                    System.out.println("Enter number");
+//                    list.addToEnd(scr.nextInt());
+//                    break;
+//                case 6:
+//                    System.out.println("Enter number");
+//                    int value = scr.nextInt();
+//                    System.out.println("Enter the item after which you want to enter the value");
+//                    int item = scr.nextInt();
+//                    list.addAfter(value, item);
+//                    break;
+//                case 7:
+//                    System.out.println("Enter number");
+//                    int val = scr.nextInt();
+//                    list.del(val);
+//                    break;
+//                case 8:
+//                    return;
+//                default:
+//                    list.display(list);
+//            }
+//            
+//        }
         
     }
 }
