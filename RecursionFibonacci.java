@@ -13,7 +13,10 @@ public class RecursionFibonacci {
 
     //Function to calculate the fibonacci term of the nth index
     int fibonacci(int n) {
-        if (n == 1 || n == 2) {
+        if (n == 0) {
+            return 0;
+        }
+        if( n == 1) {
             return 1;
         }
         return fibonacci(n - 2) + fibonacci(n - 1);
@@ -22,7 +25,7 @@ public class RecursionFibonacci {
     public static void main(String[] args) {
         RecursionFibonacci obj = new RecursionFibonacci();
         //Looping though the number of elements required
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.print(obj.fibonacci(i) + "  ");
         }
     }
