@@ -5,6 +5,11 @@
  */
 package com.mycompany.javaquestions;
 
+//Question - Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+//Input: s = "A man, a plan, a canal: Panama"
+//Output: true
+//Explanation: "amanaplanacanalpanama" is a palindrome.
+
 import java.util.*;
 
 /**
@@ -29,10 +34,9 @@ public class ValidPalindrome {
             if (ch != alphaNumericString.charAt(alphaNumericString.length() - 1 - i)) {
                 result = false;
                 return result;
-            } else{
-                result = true;
             }
         }
+        result = true;
         return result;
     }
 
